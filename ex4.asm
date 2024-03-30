@@ -16,7 +16,7 @@ testq %rdi, %rdi
 je RETURN_HW1
 movq (%rdi), %rcx
 cmpq %rax, %rcx
-jle CASE3_CNT_HW1
+jbe CASE3_CNT_HW1
 movq %rcx, %rax
 jmp CASE3_LOOP_HW1
 CASE3_CNT_HW1:
@@ -30,11 +30,11 @@ movq (%rdi), %rax
 
 CASE2_LOOP_HW1:
 movq 8(%rdi), %rdi
-testq %rdi, %rdi
+testq %rdi, %rdi                                
 je RETURN_HW1
 movq (%rdi), %rcx
 cmpq %rax, %rcx
-jl CASE2_CNT_HW1
+jb CASE2_CNT_HW1
 movq %rcx, %rax
 jmp CASE2_LOOP_HW1
 CASE2_CNT_HW1:
@@ -53,7 +53,7 @@ testq %rdi, %rdi
 je RETURN_HW1
 movq (%rdi), %rcx
 cmpq %rax, %rcx
-jl CASE1_HIT_HW1
+jb CASE1_HIT_HW1
 movq %rcx, %rax
 jmp CASE1_LOOP_HW1
 CASE1_HIT_HW1:
